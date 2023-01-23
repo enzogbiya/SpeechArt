@@ -1,0 +1,23 @@
+.image-wrapper {
+	position: relative;
+}
+
+.image {
+	object-fit: cover;
+	max-width: 640px;
+	max-height: 360px;
+	border-radius: var(--border-radius);
+}
+
+.image-wrapper span {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+
+.image-wrapper span + img {
+	opacity: 0.5;
+}

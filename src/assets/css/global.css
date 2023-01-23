@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
+:root {
+	--default-color: #fcfcfc;
+	--accent-color: #fe9b62;
+	--body-color: #131313;
+	--border-radius: 10px;
+	--focus-color: #e37f44;
+	--text-color: #cecece;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Play", sans-serif;
+}
+
+body {
+	background-color: var(--body-color);
+	color: var(--default-color);
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	color: inherit;
+}
+
+.audio-react-recorder {
+	display: none;
+}

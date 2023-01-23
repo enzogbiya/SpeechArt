@@ -1,0 +1,49 @@
+.accent-color {
+	color: var(--accent-color);
+}
+
+.default-color {
+	color: var(--default-color);
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.col-50 {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 1rem;
+}
+
+.col-100 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 1rem;
+}
+
+.fd-c {
+	flex-direction: column;
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.gap-50 {
+	gap: 50px;
+}
+
+.ai-c {
+	align-items: center;
+}
+
+.display-none {
+	display: none !important;
+}

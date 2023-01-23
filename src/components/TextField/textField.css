@@ -1,0 +1,10 @@
+.textarea {
+	height: 15vh;
+	background: transparent;
+	border-radius: var(--border-radius);
+	border: 3px solid var(--default-color);
+	font-size: 1.5rem;
+	color: var(--text-color);
+	padding: 1rem 1rem;
+	resize: vertical;
+}
