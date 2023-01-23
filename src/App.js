@@ -18,11 +18,15 @@ import config from "./config";
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-	apiKey: config.openai_api_token,
+	apiKey: process.env.REACT_APP_OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
 const App = () => {
+	useEffect(() => {
+		console.log(process.env);
+	}, []);
+
 	const [recordState, setRecordState] = useState(null);
 	const [loadingTranscription, setLoadingTranscription] = useState(false);
 	const [textField, setTextField] = useState("Here will be your promt...");
