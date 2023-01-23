@@ -4,6 +4,8 @@
 
 .image {
 	object-fit: cover;
+	height: 100%;
+	width: 100%;
 	max-width: 640px;
 	max-height: 360px;
 	border-radius: var(--border-radius);
