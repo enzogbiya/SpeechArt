@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SpeechArt/static/css/main.a4bf71bf.css",
-    "main.js": "/SpeechArt/static/js/main.c55830d8.js",
+    "main.css": "/SpeechArt/static/css/main.fa5b354f.css",
+    "main.js": "/SpeechArt/static/js/main.c68d4286.js",
     "static/media/plug.png": "/SpeechArt/static/media/plug.69d8cdb1fa5cc5a1530b.png",
     "index.html": "/SpeechArt/index.html",
-    "main.a4bf71bf.css.map": "/SpeechArt/static/css/main.a4bf71bf.css.map",
-    "main.c55830d8.js.map": "/SpeechArt/static/js/main.c55830d8.js.map"
+    "main.fa5b354f.css.map": "/SpeechArt/static/css/main.fa5b354f.css.map",
+    "main.c68d4286.js.map": "/SpeechArt/static/js/main.c68d4286.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4bf71bf.css",
-    "static/js/main.c55830d8.js"
+    "static/css/main.fa5b354f.css",
+    "static/js/main.c68d4286.js"
   ]
 }
