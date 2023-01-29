@@ -14,6 +14,7 @@ import Button from "./components/Button/Button";
 import TextField from "./components/TextField/TextField";
 import Image from "./components/Image/Image";
 import config from "./config";
+import StopWatch from "./components/StopWatch/StopWatch";
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -23,13 +24,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const App = () => {
-	useEffect(() => {
-		console.log(process.env);
-	}, []);
-
 	const [recordState, setRecordState] = useState(null);
 	const [loadingTranscription, setLoadingTranscription] = useState(false);
-	const [textField, setTextField] = useState("Here will be your promt...");
+	const [textField, setTextField] = useState("Here will be your promt..");
 	const [recording, setRecording] = useState(false);
 	const [recordingText, setRecordingText] = useState("Rec");
 	const [loadingImage, setLoadingImage] = useState(false);
@@ -64,15 +61,28 @@ const App = () => {
 		}
 	}, [loadingTranscription]);
 
+	// async function getImageFromDalle() {
+	// 	setLoadingImage(true);
+	// 	const response = await openai.createImage({
+	// 		prompt: textField,
+	// 		n: 1,
+	// 		size: "1024x1024",
+	// 	});
+
+	// 	setImage(response.data.data[0].url);
+	// }
+
 	async function getImageFromDalle() {
 		setLoadingImage(true);
-		const response = await openai.createImage({
-			prompt: textField,
-			n: 1,
-			size: "1024x1024",
+		const myPrompt = textField;
+		const response = await fetch("https://us-central1-samaibackend.cloudfunctions.net/happyAI/pictures", {
+			method: "POST",
+			headers: { "Content-type": "application/json" },
+			body: JSON.stringify({ myPrompt }),
 		});
 
-		setImage(response.data.data[0].url);
+		const result = await response.json();
+		setImage(result.data[0].url);
 	}
 
 	const loadedImage = () => {
@@ -105,22 +115,35 @@ const App = () => {
 	return (
 		<section className="main">
 			<div className="container container-bordered">
-				<div className="row mb-30">
-					<div className="col-50">
+				<div className="row mb-30 main-content">
+					<div className="col-50 content-text">
 						<h1 className="accent-color mb-30">Tell us what you want to draw</h1>
-						<div className="btn-group fd-c">
-							<Button icon={faMicrophoneAlt} onClick={startRecording}>
-								{recordingText}
-							</Button>
-							<Button icon={faStopCircle} onClick={stopRecording} disabled={recording ? false : true}>
-								Stop
-							</Button>
-							<Button icon={faTimesCircle} onClick={cleanAllFields}>
-								Clean all
-							</Button>
+						<div className="row ai-flexstart gap-15 action-panel">
+							<div className="col-50 action-btns">
+								<div className="btn-group fd-c">
+									<Button icon={faMicrophoneAlt} onClick={startRecording}>
+										{recordingText}
+										{recording && <StopWatch />}
+									</Button>
+									<Button icon={faStopCircle} onClick={stopRecording} disabled={recording ? false : true}>
+										Translate to text
+									</Button>
+									<Button icon={faTimesCircle} onClick={cleanAllFields}>
+										Clean all
+									</Button>
+								</div>
+							</div>
+							<div className="col-50 instruction">
+								<h2 className="mb-10">Instruction</h2>
+								<ul>
+									<li>1) press Rec and tell what you want to draw</li>
+									<li>2) press "Translate to text"</li>
+									<li>3) press "Draw"</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div className="col-50 fd-c">
+					<div className="col-50 fd-c content-image">
 						<AudioReactRecorder state={recordState} onStop={resultOfRecording}></AudioReactRecorder>
 						<Image src={image} loadingImage={loadingImage} onLoad={loadedImage} />
 					</div>

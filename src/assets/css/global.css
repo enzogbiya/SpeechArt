@@ -20,13 +20,3 @@ body {
 	background-color: var(--body-color);
 	color: var(--default-color);
 }
-
-h1 {
-	font-size: 3rem;
-	font-weight: 700;
-	color: inherit;
-}
-
-.audio-react-recorder {
-	display: none;
-}

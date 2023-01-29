@@ -7,7 +7,9 @@ const Image = (props) => {
 	return (
 		<div className="image-wrapper">
 			<ClipLoader loading={loadingImage} color="#fe9b62" />
-			<img className="image" src={src} alt={alt ? alt : "image here"} onLoad={onLoad}></img>
+			<a href={src} target="_blank" rel="noreferrer">
+				<img className="image" src={src} alt={alt ? alt : "image here"} onLoad={onLoad}></img>
+			</a>
 		</div>
 	);
 };

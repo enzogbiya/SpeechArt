@@ -22,3 +22,105 @@
 	border: 3px solid var(--default-color);
 	border-radius: var(--border-radius);
 }
+
+ul {
+	list-style-type: none;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	color: inherit;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: inherit;
+}
+
+ul li {
+	font-size: 1.1rem;
+	color: var(--text-color);
+	margin-bottom: 0.3rem;
+}
+
+.audio-react-recorder {
+	display: none;
+}
+
+.instruction {
+	padding-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+	.main {
+		height: auto;
+	}
+	.action-btns button {
+		min-width: unset;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.main .main-content {
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	.main .content-text {
+		width: 100%;
+	}
+
+	.main .action-panel {
+		gap: 30px;
+	}
+
+	.main .action-btns .btn-group {
+		width: 80%;
+	}
+
+	.main .content-image {
+		width: 100%;
+	}
+
+	.main .content-image .image-wrapper {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.main {
+		padding: 1rem 2rem;
+	}
+
+	.main .content-text h1 {
+		font-size: 2rem;
+	}
+
+	.main .action-panel {
+		flex-direction: column-reverse;
+	}
+
+	.main .action-panel .instruction {
+		width: 100%;
+	}
+
+	.main .action-panel .instruction h2 {
+		font-size: 1.5rem;
+	}
+
+	.main .action-panel .action-btns {
+		width: 100%;
+	}
+
+	.main .action-panel .action-btns .btn-group {
+		width: 100%;
+	}
+
+	.main .textarea {
+		font-size: 1.3rem;
+		height: 30vh;
+	}
+}
