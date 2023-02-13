@@ -214,7 +214,7 @@ const Voiceandpicture = () => {
 							<TextField handleTextField={handleTextField}>{textField}</TextField>
 						</div>
 						<div className="col-50 ai-c">
-							<Button onClick={() => setShowModal(true)}>Share</Button>
+							{image !== plug && <Button onClick={() => setShowModal(true)}>Share</Button>}
 							<Modal
 								onClose={() => setShowModal(false)}
 								show={showModal}
