@@ -209,8 +209,8 @@ const Voiceandpicture = () => {
 					</div>
 				</div>
 				<div className="row fd-c gap-50">
-					<div className="row">
-						<div className="col-50">
+					<div className="row sharePromt">
+						<div className="col-50 promt">
 							<TextField handleTextField={handleTextField}>{textField}</TextField>
 						</div>
 						<div className="col-50 ai-c">

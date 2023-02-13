@@ -88,6 +88,15 @@ ul li {
 	.main .content-image .image-wrapper {
 		text-align: center;
 	}
+
+	.main .sharePromt {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.main .sharePromt .promt {
+		width: 80%;
+	}
 }
 
 @media screen and (max-width: 600px) {
